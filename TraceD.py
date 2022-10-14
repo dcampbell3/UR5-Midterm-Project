@@ -1,0 +1,1 @@
+# File to trace a "D" with the UR5 end effector in Gazebo 
