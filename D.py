@@ -14,7 +14,7 @@ def trace_D():
     wpose = move_group.get_current_pose().pose
 
     #Move 2: 
-    wpose.positon.z -= 0.5
+    wpose.position.z -= 0.5
     waypoints.append(copy.deepcopy(wpose))
 
     #Move 3: 
