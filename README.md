@@ -1,1 +1,1 @@
-Initial commit for ECE 383 project
+Initial commit for ECE 383 project pt. 2
