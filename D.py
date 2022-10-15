@@ -7,7 +7,7 @@ import geometry_msgs.msg
 import math
 from setup import *
 
-def trace_D():
+def trace_D(scale):
     '''
     d = 0.5 / (2*math.cos(math.radians(45))+1)
 
@@ -44,12 +44,13 @@ def trace_D():
     move_group.execute(plan, wait=True)
     '''
 
-    x_len = 0.25 / (2*math.cos(math.radians(45))+1)
+    x_len = scale / (2*math.cos(math.radians(45))+1)
 
     waypoints = []
     wpose = move_group.get_current_pose().pose
+
     #Move 2: 
-    wpose.position.z -= 0.25
+    wpose.position.z -= scale
     waypoints.append(copy.deepcopy(wpose))
 
     #Move 3: 
