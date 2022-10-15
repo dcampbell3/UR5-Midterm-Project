@@ -1,4 +1,5 @@
 from setup import * 
+from reset import *
 from D import trace_D
 import sys
 import copy
@@ -8,4 +9,5 @@ import moveit_msgs.msg
 import geometry_msgs.msg
 import math
 
-trace_D()
+return_to_start()
+# trace_D()
