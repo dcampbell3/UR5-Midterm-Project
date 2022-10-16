@@ -7,7 +7,7 @@ import geometry_msgs.msg
 import math
 from setup import *
 
-def trace_R(scale): 
+def trace_R(scale, ee_step, jump_threshold): 
     x_len = scale / (2*(2*math.cos(math.radians(45))+1))
 
     waypoints = []
@@ -39,7 +39,17 @@ def trace_R(scale):
     wpose.position.z -= x_len * math.cos(math.radians(45))
     waypoints.append(copy.deepcopy(wpose))
 
-    # Move 7 
-    wpose.position.x -= (x_len + x_len * math.cos(math.radians(45)))
+    # Move 7
+    wpose.position.x += x_len
+    waypoints.append(copy.deepcopy(wpose))
+
+    # Move 8 
+    wpose.position.x -= (x_len + (x_len * math.cos(math.radians(45))))
     wpose.position.z -= scale/2
+    waypoints.append(copy.deepcopy(wpose))
+
+    (plan, fraction) = move_group.compute_cartesian_path(waypoints, ee_step, jump_threshold)
+    move_group.execute(plan, wait=True)
+
+    print("Traced R")
     return 

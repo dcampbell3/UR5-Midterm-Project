@@ -22,6 +22,8 @@ def return_to_start():
         move_group.go(joint_goal, wait=True)
         move_group.stop()
 
+    print("Returned to Start")
+
     return
 
-print(move_group.get_current_pose())
+return_to_start()
