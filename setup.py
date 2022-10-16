@@ -1,5 +1,3 @@
-# File to trace a "D" with the UR5 end effector in Gazebo 
-
 import sys
 import copy
 import rospy
@@ -7,6 +5,8 @@ import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
 import math
+
+# File to setup variables to compute trajectory
 
 moveit_commander.roscpp_initialize(sys.argv)
 

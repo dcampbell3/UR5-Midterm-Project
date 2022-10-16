@@ -13,33 +13,46 @@ import geometry_msgs.msg
 import math
 import time
 
+# Parameters to compute and execute the trajectories with
+# Note: only stable for these parameters
 SCALE = 0.10
 EE_STEP = 0.001
 JUMP_THRESHOLD = 100
-# !!NOTE!! run scale with 0.25 
 
+# Time to delay between commands
+SLEEP_TIME = 1.5
+
+# Code to run the final simulation 
+
+# Reset to the initial pose
 return_to_start()
 
-time.sleep(3)
+time.sleep(SLEEP_TIME)
 
+# Trace a capital D with the end effector of the robot
 trace_D(SCALE, EE_STEP, JUMP_THRESHOLD)
 
-time.sleep(3)
+time.sleep(SLEEP_TIME)
 
+# Reset to the initial pose
 return_to_start() 
 
-time.sleep(3)
+time.sleep(SLEEP_TIME)
 
+# Trace a capital R with the end effector of the robot
 trace_R(SCALE, EE_STEP, JUMP_THRESHOLD)
 
-time.sleep(3)
+time.sleep(SLEEP_TIME)
 
+# Reset to the initial pose
 return_to_start()
 
+# Trace a capital C with the end effector of the robot
 trace_C(SCALE, EE_STEP, JUMP_THRESHOLD)
 
-time.sleep(3) 
+time.sleep(SLEEP_TIME) 
 
+# Reset to the initial pose
 return_to_start()
 
 
